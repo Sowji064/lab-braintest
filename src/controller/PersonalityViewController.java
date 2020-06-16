@@ -1,4 +1,4 @@
-package controller;
+ package controller;
 
 import java.io.IOException;
 
@@ -35,7 +35,6 @@ public class PersonalityViewController extends HttpServlet {
 		System.out.println(options);
 				
 		/* 
-
 		request.setAttribute("message", message);
 		
 		if(message!=null)
@@ -56,5 +55,3 @@ public class PersonalityViewController extends HttpServlet {
 		}*/
 		}
 	}
-
-
