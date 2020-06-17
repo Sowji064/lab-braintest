@@ -1,4 +1,4 @@
- package controller;
+package controller;
 
 import java.io.IOException;
 
@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
+import service.PersonalityCalculator;
 
 
 @WebServlet(urlPatterns= {"/personality"})
@@ -28,15 +31,14 @@ public class PersonalityViewController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+	
+
 		String options=request.getParameter("selectedOptions");
+		PersonalityCalculator personality=new PersonalityCalculator();
 		
-		System.out.println(options);
-				
-		/* 
+		String message=personality.findYourBrainType(options);
+		System.out.println(message);
 		request.setAttribute("message", message);
-		
 		if(message!=null)
 		{
 			if(message.equals("rightbrained")) {
@@ -52,6 +54,6 @@ public class PersonalityViewController extends HttpServlet {
 				rd.forward(request, response);
 			}
 		
-		}*/
+		}
 		}
 	}
